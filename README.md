@@ -37,11 +37,11 @@ The central node will be wired through SPI to an SD card reader to store all of 
 
 **ESP32C6 Overview
 
-![ESP32C6Overview.jpg](assets\ESP32C6Overview.jpg)
+![ESP32C6Overview.jpg](assets/ESP32C6Overview.jpg)
 
 **ESP32C6 Pins
 
-![ESP32C6Pinout.jpg](assets\ESP32C6Pinout.jpg)
+![ESP32C6Pinout.jpg](assets/ESP32C6Pinout.jpg)
 
 For SPI connection between the accelerometer and the ESP32, there are already hardware SPI pins allocated: 
 SCK: 8
@@ -71,7 +71,7 @@ CS = CS or SS
 
 For power management, We will follow from the XIAO tutorial to wire the battery to the board, and connect the voltage splitter to analog pin A0 for reading. 
 
-![XIAOBatteryConns.jpg](assets\XIAOBatteryConns.jpg)
+![XIAOBatteryConns.jpg](assets/XIAOBatteryConns.jpg)
 
 ### Controller Node
 
