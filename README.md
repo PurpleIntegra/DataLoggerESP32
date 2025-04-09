@@ -8,9 +8,9 @@ Future Work: Power Management, Data handling for 500Hz+ logging, GPS Integration
 
  - [Introduction](#introduction)
  - [Schematics](#schematics)
- - [Code Functionality](#Code Functionality)
- - [Work to be Done](#Work to be Done)
- - [References and Cool Information](#References and Cool Information)
+ - [Code Functionality](#Code-Functionality)
+ - [Work to be Done](#Work-to-be-Done)
+ - [References and Cool Information](#References-and-Cool-Information)
 
 ## Introduction
 // Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
