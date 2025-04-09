@@ -8,6 +8,9 @@ Future Work: Power Management, Data handling for 500Hz+ logging, GPS Integration
 
  - [Introduction](#introduction)
  - [Schematics](#schematics)
+ - [Code Functionality](#Code Functionality)
+ - [Work to be Done](#Work to be Done)
+ - [References and Cool Information](#References and Cool Information)
 
 ## Introduction
 // Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
@@ -28,9 +31,55 @@ The central node will be wired through SPI to an SD card reader to store all of 
 
 ## Schematics
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** Arduino IDE, ESP32C6, ESP-NOW, XIAO ESP32C6
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write *something*. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+### Peripheral Sensor Node
+
+**ESP32C6 Overview
+
+![ESP32C6-Overview.jpg](assets\ESP32C6-Overview.jpg)
+
+**ESP32C6 Pins
+
+![ESP32C6-Pinout.jpg](assets\ESP32C6-Pinout.jpg)
+
+For SPI connection between the accelerometer and the ESP32, there are already hardware SPI pins allocated: 
+SCK: 8
+MISO: 9
+MOSI: 10
+
+For the CS pin, any pin can be used, however we will use pin 3
+CS: 3
+
+For the connections to the accelerometer, it is as follows (Accel to Xiao, schematic to be added)
+Vin: 5V or 3V (we will use 3V3)
+GND: GND
+SCL: D8
+DO: D9
+SDA: 10
+CS: 3
+
+Because I didn't have this memorized: 
+SCK = SCL
+D0 = MOSI
+SDA = MISO
+CS = CS or SS
+
+
+
+** Battery Management
+
+For power management, We will follow from the XIAO tutorial to wire the battery to the board, and connect the voltage splitter to analog pin A0 for reading. 
+
+![XIAO_BatteryConns.jpg](assets\XIAO_BatteryConns.jpg)
+
+### Controller Node
+
+This will be filled with something at some point. A lot of the wiring is similar to the above, except SPI to SD card reader, potentially different controller, similar battery management system. 
+
+## Code Functionality
+
+This section is to break down what each section of code does. Mostly Random Nerd Tutorials work, but with this specific application (thank you again)
 
 ## Optimizations
 *(optional)*
@@ -41,5 +90,16 @@ You don't have to include this section but interviewers *love* that you can not 
 
 No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *whoa this is awesome* or *wow I actually did it!* moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
 
+## References and Cool Information
 
+HUGE thanks to Random Nerd Tutorials, without their guides I'd be hopeless
+https://RandomNerdTutorials.com/esp32-esp-now-wi-fi-web-server/
 
+XIAO ESP32C6
+https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/
+
+Adafruit LSMDSOX
+https://learn.adafruit.com/lsm6dsox-and-ism330dhc-6-dof-imu/arduino
+
+How to write a wicked README.md
+https://github.com/BegoonLab/xiao-esp32c6-wifi-sensor
