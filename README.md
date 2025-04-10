@@ -13,7 +13,6 @@ Future Work: Power Management, Data handling for 500Hz+ logging, GPS Integration
  - [References and Cool Information](#References-and-Cool-Information)
 
 ## Introduction
-// Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
 
 An open sourced data logger to determine the acceleration data at the axle of a bike, primarily used for ride optimization for mountain biking, however could be the basis for any sort of data acquisition system. The initial idea and form factor for this system came from disbelief of the Fox "Live Valve NEO" system, and an initial mis-understanding of how the NEO system performed. (Below image is LiveValve Neo, NOT MY DATA LOGGER)
 
@@ -35,11 +34,11 @@ The central node will be wired through SPI to an SD card reader to store all of 
 
 ### Peripheral Sensor Node
 
-**ESP32C6 Overview
+**ESP32C6 Overview**
 
 ![ESP32C6Overview.jpg](assets/ESP32C6Overview.jpg)
 
-**ESP32C6 Pins
+**ESP32C6 Pins**
 
 ![ESP32C6Pinout.jpg](assets/ESP32C6Pinout.jpg)
 
@@ -67,7 +66,7 @@ CS = CS or SS
 
 
 
-** Battery Management
+** Battery Management **
 
 For power management, We will follow from the XIAO tutorial to wire the battery to the board, and connect the voltage splitter to analog pin A0 for reading. 
 
@@ -81,6 +80,14 @@ This will be filled with something at some point. A lot of the wiring is similar
 
 This section is to break down what each section of code does. Mostly Random Nerd Tutorials work, but with this specific application (thank you again)
 
+## ESP-NOW Overview
+
+Features/Limitations
+ - 250 byte payload max (converts to ~62 standard 4-byte floats)
+ - One or Two Way communications
+ - Can send callback function to confirm transmission success or failure
+ - Fast communication protocol (how fast is yet to be determined)
+
 ## Optimizations
 *(optional)*
 
@@ -93,13 +100,21 @@ No matter what your experience level, being an engineer means continuously learn
 ## References and Cool Information
 
 HUGE thanks to Random Nerd Tutorials, without their guides I'd be hopeless
+
 https://RandomNerdTutorials.com/esp32-esp-now-wi-fi-web-server/
 
 XIAO ESP32C6
+
 https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/
 
 Adafruit LSMDSOX
+
 https://learn.adafruit.com/lsm6dsox-and-ism330dhc-6-dof-imu/arduino
 
 How to write a wicked README.md
+
 https://github.com/BegoonLab/xiao-esp32c6-wifi-sensor
+
+ESP-NOW Limitations
+
+https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/
